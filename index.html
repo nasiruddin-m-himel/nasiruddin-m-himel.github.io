@@ -1,256 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasiruddin Mahmud | Portfolio</title>
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary-color: #f8fafc;
-            --text-main: #1e293b;
-            --text-light: #64748b;
-            --card-bg: #ffffff;
-            --border-radius: 12px;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--text-main);
-            background-color: #f1f5f9;
-        }
-
-        header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #fff;
-            padding: 4rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            letter-spacing: -0.5px;
-        }
-
-        header p {
-            font-size: 1.25rem;
-            margin-top: 12px;
-            color: #cbd5e1;
-            font-weight: 300;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: -2rem auto 2rem;
-            padding: 0 1.5rem;
-            position: relative;
-        }
-
-        section {
-            background: var(--card-bg);
-            margin-bottom: 2rem;
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
-        }
-
-        section:hover {
-            transform: translateY(-2px);
-        }
-
-        h2 {
-            color: #0f172a;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-
-        .item-card {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .item-card:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .item-card h3 {
-            margin: 0 0 5px 0;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-
-        .item-meta {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            list-style: none;
-            padding: 0;
-        }
-
-        .skills-list li {
-            background: #e0f2fe;
-            color: var(--primary-dark);
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-
-        .skills-list li:hover {
-            background: #bae6fd;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .contact-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            transition: color 0.2s;
-        }
-
-        .contact-links a:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: #0f172a;
-            color: #94a3b8;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nasiruddin Mahmud Himel — EECE @ MIST</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-    <header>
-        <h1>Nasiruddin Mahmud (Himel)</h1>
-        <p>Electrical & Electronic Engineering | Hardware & Robotics</p>
-    </header>
+  <!-- CIRCUIT BACKGROUND -->
+  <canvas id="circuit-canvas"></canvas>
 
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I am an EEE student with a strong passion for hardware engineering, circuit design, and autonomous systems. I enjoy bridging the gap between theoretical electronics and practical, real-world robotics.</p>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            <div class="item-card">
-                <h3>Military Institute of Science and Technology (MIST)</h3>
-                <div class="item-meta">Bachelor of Science - BS, Electrical and Electronics Engineering | Apr 2023 – 2027</div>
-                <p><strong>Skills:</strong> Research, MATLAB, and more.</p>
-            </div>
-            <div class="item-card">
-                <h3>Notre Dame College</h3>
-                <div class="item-meta">Higher Secondary Certificate | Jun 2020 – Dec 2022</div>
-            </div>
-            <div class="item-card">
-                <h3>Adamjee Cantonment Public School</h3>
-                <div class="item-meta">Secondary School Certificate | Jan 2011 – Feb 2020</div>
-                <p><strong>Skills:</strong> C++, Python</p>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="item-card">
-                <h3>Associate Director</h3>
-                <div class="item-meta">IEEE MIST Student Branch | Jul 2025 – Present</div>
-            </div>
-            <div class="item-card">
-                <h3>Team Coordinator</h3>
-                <div class="item-meta">MIST Robotics Club | Jun 2025 – Present</div>
-                <p>Responsible for overseeing event planning, inter-team collaboration, and task delegation across multiple sub-teams. My role involves coordinating complex robotics initiatives.</p>
-            </div>
-            <div class="item-card">
-                <h3>Mathematics Instructor</h3>
-                <div class="item-meta">UDVASH - উদ্ভাস (Part-time) | Oct 2023 – Jun 2024</div>
-            </div>
-        </section>
-
-        <section id="research">
-            <h2>Publications & Research</h2>
-            <div class="item-card">
-                <h3>Forecasting SSC Examination Performance in Bangladesh Using ARIMA: An Eleven-Year Time Series Analysis</h3>
-                <div class="item-meta">Published: March 2026</div>
-            </div>
-            <div class="item-card">
-                <h3>Analyzing Stock Price Volatility: A Statistical Study of Three Listed Companies on the Dhaka Stock Exchange</h3>
-                <div class="item-meta">Published: April 2025 | Asian Business Review</div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="item-card">
-                <h3>Automated Fish Feeder</h3>
-                <p>Designed and built an automated aquarium feeding system utilizing an ESP32 microcontroller, a servo motor, and custom 3D-printed hardware components.</p>
-            </div>
-            <div class="item-card">
-                <h3>SRAM Cell Modeling</h3>
-                <p>Conducted simulations and analysis on 6T CNTFET SRAM cells, utilizing MATLAB to visualize Static Noise Margin (SNM) plots for stability testing.</p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <ul class="skills-list">
-                <li>Circuit Simulation (Proteus)</li>
-                <li>MATLAB Data Visualization</li>
-                <li>Microcontrollers (ESP32, Arduino)</li>
-                <li>VLSI & SRAM Design</li>
-                <li>C/C++ & 8086 Assembly Language</li>
-                <li>Hardware Troubleshooting</li>
-                <li>Event Management & Leadership</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact & Connect</h2>
-            <p>Feel free to reach out to discuss hardware projects, robotics, or engineering opportunities.</p>
-            <div class="contact-links">
-                <a href="mailto:Nasiruddin.m.himel@gmail.com">📧 Nasiruddin.m.himel@gmail.com</a>
-                <a href="https://www.linkedin.com/in/nasiruddin-mahmud/" target="_blank">💼 linkedin.com/in/nasiruddin-mahmud</a>
-                <a href="https://www.facebook.com/nasiruddin.himel/" target="_blank">🌐 facebook.com/nasiruddin.himel</a>
-                <a href="https://nasiruddin.me" target="_blank">💻 nasiruddin.me</a>
-            </div>
-        </section>
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-bracket">[</span>NMH<span class="logo-bracket">]</span>
+      </a>
+      <div class="nav-tabs">
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="experience">Experience</button>
+        <button class="tab-btn" data-tab="projects">Projects</button>
+        <button class="tab-btn" data-tab="publications">Publications</button>
+        <button class="tab-btn" data-tab="skills">Skills</button>
+        <button class="tab-btn" data-tab="contact">Contact</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <button class="tab-btn active" data-tab="about">About</button>
+      <button class="tab-btn" data-tab="experience">Experience</button>
+      <button class="tab-btn" data-tab="projects">Projects</button>
+      <button class="tab-btn" data-tab="publications">Publications</button>
+      <button class="tab-btn" data-tab="skills">Skills</button>
+      <button class="tab-btn" data-tab="contact">Contact</button>
+    </div>
+  </nav>
 
-    <footer>
-        <p>&copy; 2026 Nasiruddin Mahmud. All rights reserved.</p>
-    </footer>
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-chip-label">EECE · MIST · 2023–2027</div>
+      <h1 class="hero-name">
+        <span class="hero-first">Nasiruddin</span>
+        <span class="hero-last">Mahmud Himel</span>
+      </h1>
+      <p class="hero-tagline">
+        IC Layout & Chip Design · Deep Learning · Embedded Systems
+      </p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="scrollToSection('projects')">View Projects</button>
+        <a href="mailto:nasiruddin.m.himel@gmail.com" class="btn-secondary">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Publications</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Projects</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">IEEE</span><span class="stat-label">Associate Director</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="chip-container">
+        <div class="chip">
+          <div class="chip-core">
+            <div class="chip-inner-ring"></div>
+            <div class="chip-label-wrap">
+              <span class="chip-text">NMH</span>
+              <span class="chip-sub">32nm</span>
+            </div>
+          </div>
+          <div class="chip-pins top">
+            <div class="pin"></div><div class="pin"></div><div class="pin"></div>
+            <div class="pin"></div><div class="pin"></div><div class="pin"></div>
+          </div>
+          <div class="chip-pins bottom">
+            <div class="pin"></div><div class="pin"></div><div class="pin"></div>
+            <div class="pin"></div><div class="pin"></div><div class="pin"></div>
+          </div>
+          <div class="chip-pins left">
+            <div class="pin"></div><div class="pin"></div><div class="pin"></div>
+            <div class="pin"></div>
+          </div>
+          <div class="chip-pins right">
+            <div class="pin"></div><div class="pin"></div><div class="pin"></div>
+            <div class="pin"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- ABOUT TAB -->
+    <section class="tab-section active" id="tab-about">
+      <div class="container">
+        <div class="section-tag">// 01 — About</div>
+        <div class="about-grid">
+          <div class="about-text">
+            <h2 class="section-title">Building at the intersection of<br><em>silicon and software.</em></h2>
+            <p>I'm a third-year EECE student at MIST, Bangladesh, diving deep into IC Layout, Chip Design, and the fascinating world of nanotechnology. My work spans CNFET-based SRAM architectures, TCAD simulations, and deep learning for embedded systems.</p>
+            <p>Beyond the lab, I thrive in community and leadership — currently serving as Associate Director at IEEE MIST Student Branch and Team Coordinator at MIST Robotics Club. I believe great engineering is built by great teams.</p>
+            <p>When I'm not pushing silicon boundaries, I freelance as a digital artist and once tutored high school mathematics. I find creativity in both circuits and canvas.</p>
+            <div class="about-badges">
+              <span class="badge">IC Layout</span>
+              <span class="badge">VLSI Design</span>
+              <span class="badge">Deep Learning</span>
+              <span class="badge">Embedded Systems</span>
+              <span class="badge">Research</span>
+            </div>
+          </div>
+          <div class="about-edu">
+            <h3 class="sub-heading">Education</h3>
+            <div class="edu-timeline">
+              <div class="edu-item">
+                <div class="edu-dot"></div>
+                <div class="edu-info">
+                  <span class="edu-year">2023 – 2027</span>
+                  <strong>B.Sc. EECE</strong>
+                  <span class="edu-inst">Military Institute of Science and Technology (MIST)</span>
+                </div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-dot"></div>
+                <div class="edu-info">
+                  <span class="edu-year">2020 – 2022</span>
+                  <strong>HSC — Science</strong>
+                  <span class="edu-inst">Notre Dame College, Dhaka</span>
+                </div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-dot"></div>
+                <div class="edu-info">
+                  <span class="edu-year">2011 – 2020</span>
+                  <strong>SSC — Science</strong>
+                  <span class="edu-inst">Adamjee Cantonment Public School</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE TAB -->
+    <section class="tab-section" id="tab-experience">
+      <div class="container">
+        <div class="section-tag">// 02 — Experience</div>
+        <h2 class="section-title">Roles &amp; <em>Responsibilities</em></h2>
+        <div class="timeline">
+
+          <div class="timeline-item" style="--delay:0.05s">
+            <div class="timeline-marker">
+              <span class="tl-year">2025</span>
+              <div class="tl-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="tl-tag">IEEE · Student Branch</div>
+              <h3>Associate Director</h3>
+              <p>Led strategic initiatives and coordinated student branch activities at IEEE MIST Student Branch, fostering technical excellence and community growth.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" style="--delay:0.1s">
+            <div class="timeline-marker">
+              <span class="tl-year">2025</span>
+              <div class="tl-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="tl-tag">MIST Robotics Club</div>
+              <h3>Team Coordinator</h3>
+              <p>Facilitated cross-functional collaboration and led technical delegation for university-wide robotics projects, bridging hardware and software teams.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" style="--delay:0.15s">
+            <div class="timeline-marker">
+              <span class="tl-year">2025</span>
+              <div class="tl-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="tl-tag">Robolution 2025 · Event</div>
+              <h3>Segment Lead — LFR & Cosmo Clench</h3>
+              <p>Spearheaded event logistics and public relations for two major competition segments, managing a diverse group of participants and ensuring seamless execution.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" style="--delay:0.2s">
+            <div class="timeline-marker">
+              <span class="tl-year">2023–2024</span>
+              <div class="tl-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="tl-tag">UDVASH · উদ্ভাস · Part-time</div>
+              <h3>Mathematics Instructor</h3>
+              <p>Delivered engaging mathematics instruction for HSC-level students, simplifying complex concepts and improving student performance metrics.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" style="--delay:0.25s">
+            <div class="timeline-marker">
+              <span class="tl-year">2020–2023</span>
+              <div class="tl-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="tl-tag">Cartoonhead · Freelance</div>
+              <h3>Digital Artist</h3>
+              <p>Managed professional relationships with international clients, translating creative briefs into polished visual solutions using Adobe Illustrator and Photoshop.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS TAB -->
+    <section class="tab-section" id="tab-projects">
+      <div class="container">
+        <div class="section-tag">// 03 — Projects</div>
+        <h2 class="section-title">Things I've <em>Built</em></h2>
+        <div class="projects-grid">
+
+          <div class="project-card featured" style="--delay:0.05s">
+            <div class="project-img-placeholder ic"></div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span>Cadence Virtuoso</span><span>VLSI</span><span>CNFET</span>
+              </div>
+              <h3>CNFET-Based SRAM Architectures (32nm)</h3>
+              <p>Designed 6T, 8T, 10T, and 12T SRAM topologies using the Stanford CNFET model to address MOSFET scaling limitations. Benchmarked Static Noise Margin (SNM), leakage, and process variability.</p>
+            </div>
+          </div>
+
+          <div class="project-card" style="--delay:0.1s">
+            <div class="project-img-placeholder dl"></div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span>Python</span><span>CNN</span><span>IMU</span>
+              </div>
+              <h3>GestureNet — Hand Gesture Recognition</h3>
+              <p>Developed a CNN to classify 11 gestures from IMU signals achieving 96.21% accuracy. Implemented SPWVD for time-frequency signal analysis.</p>
+            </div>
+          </div>
+
+          <div class="project-card" style="--delay:0.15s">
+            <div class="project-img-placeholder filter"></div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span>Verilog-A</span><span>SPICE</span><span>Cadence</span>
+              </div>
+              <h3>Tunable RC Filter Simulation</h3>
+              <p>Developed a parametric Verilog-A behavioral model for a tunable RC filter and validated accuracy against SPICE simulation within Cadence Virtuoso.</p>
+            </div>
+          </div>
+
+          <div class="project-card" style="--delay:0.2s">
+            <div class="project-img-placeholder tcad"></div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span>Silvaco TCAD</span><span>TonyPlot</span>
+              </div>
+              <h3>MOSFET & Diode Physics Simulations</h3>
+              <p>Performed TCAD simulations for MOSFET I-V characterization and PN junction breakdown analysis, visualizing carrier profiles in TonyPlot.</p>
+            </div>
+          </div>
+
+          <div class="project-card" style="--delay:0.25s">
+            <div class="project-img-placeholder turret"></div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span>OpenCV</span><span>Python</span><span>Robotics</span>
+              </div>
+              <h3>Biometric Turret Control System</h3>
+              <p>Designed a closed-loop sentry system using OpenCV for facial feature extraction and target tracking, with a Python controller for high-speed motor actuation.</p>
+            </div>
+          </div>
+
+          <div class="project-card" style="--delay:0.3s">
+            <div class="project-img-placeholder robot"></div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span>Arduino</span><span>Embedded C</span><span>CNC</span>
+              </div>
+              <h3>2-Axis Drawing Robot</h3>
+              <p>Engineered a CNC plotter using stepper drivers and mechanical linkage to convert digital images into physical drawings.</p>
+            </div>
+          </div>
+
+          <div class="project-card" style="--delay:0.35s">
+            <div class="project-img-placeholder esp"></div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span>ESP32</span><span>3D Printing</span><span>IoT</span>
+              </div>
+              <h3>Automated Fish Feeder</h3>
+              <p>Designed and built an automated aquarium feeding system with ESP32, servo motor, and custom 3D-printed hardware components.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS TAB -->
+    <section class="tab-section" id="tab-publications">
+      <div class="container">
+        <div class="section-tag">// 04 — Publications</div>
+        <h2 class="section-title">Research &amp; <em>Writing</em></h2>
+        <div class="pub-list">
+
+          <div class="pub-card" style="--delay:0.05s">
+            <div class="pub-year">2026</div>
+            <div class="pub-content">
+              <div class="pub-type">Article · Time Series Analysis</div>
+              <h3>Forecasting SSC Examination Performance in Bangladesh Using ARIMA</h3>
+              <p>An eleven-year time series analysis applying ARIMA models to forecast national examination performance trends in Bangladesh, contributing to education policy research.</p>
+              <span class="pub-date">March 2026</span>
+            </div>
+          </div>
+
+          <div class="pub-card" style="--delay:0.1s">
+            <div class="pub-year">2025</div>
+            <div class="pub-content">
+              <div class="pub-type">Article · Asian Business Review</div>
+              <h3>Analyzing Stock Price Volatility: A Statistical Study of Three Listed Companies on the Dhaka Stock Exchange</h3>
+              <p>Statistical analysis of stock price volatility for companies listed on the Dhaka Stock Exchange, published in Asian Business Review.</p>
+              <span class="pub-date">April 2025</span>
+            </div>
+          </div>
+
+          <div class="pub-card" style="--delay:0.15s">
+            <div class="pub-year">2024</div>
+            <div class="pub-content">
+              <div class="pub-type">Article · Engineering International</div>
+              <h3>Turing Stability and Natural Pattern Formation in the Gray-Scott Reaction-Diffusion System</h3>
+              <p>Analysis of Turing instability and emergent pattern formation in the Gray-Scott reaction-diffusion system, published in Engineering International.</p>
+              <span class="pub-date">January 2024</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS TAB -->
+    <section class="tab-section" id="tab-skills">
+      <div class="container">
+        <div class="section-tag">// 05 — Skills</div>
+        <h2 class="section-title">Tools &amp; <em>Technologies</em></h2>
+        <div class="skills-grid">
+
+          <div class="skill-group" style="--delay:0.05s">
+            <div class="skill-group-icon">◈</div>
+            <h3>VLSI & IC Design</h3>
+            <ul>
+              <li><span class="skill-dot"></span>Cadence Virtuoso</li>
+              <li><span class="skill-dot"></span>Silvaco TCAD</li>
+              <li><span class="skill-dot"></span>Dsch2</li>
+              <li><span class="skill-dot"></span>PSpice / OrCAD</li>
+            </ul>
+          </div>
+
+          <div class="skill-group" style="--delay:0.1s">
+            <div class="skill-group-icon">⟨/⟩</div>
+            <h3>Programming</h3>
+            <ul>
+              <li><span class="skill-dot"></span>Python</li>
+              <li><span class="skill-dot"></span>C / C++</li>
+              <li><span class="skill-dot"></span>Assembly (8086)</li>
+              <li><span class="skill-dot"></span>Verilog-A</li>
+            </ul>
+          </div>
+
+          <div class="skill-group" style="--delay:0.15s">
+            <div class="skill-group-icon">⬡</div>
+            <h3>Simulation & Modeling</h3>
+            <ul>
+              <li><span class="skill-dot"></span>MATLAB</li>
+              <li><span class="skill-dot"></span>COMSOL Multiphysics</li>
+              <li><span class="skill-dot"></span>Proteus</li>
+            </ul>
+          </div>
+
+          <div class="skill-group" style="--delay:0.2s">
+            <div class="skill-group-icon">⚡</div>
+            <h3>Embedded Systems</h3>
+            <ul>
+              <li><span class="skill-dot"></span>Arduino</li>
+              <li><span class="skill-dot"></span>ESP-32</li>
+              <li><span class="skill-dot"></span>OpenCV</li>
+            </ul>
+          </div>
+
+          <div class="skill-group" style="--delay:0.25s">
+            <div class="skill-group-icon">✦</div>
+            <h3>Design & Creative</h3>
+            <ul>
+              <li><span class="skill-dot"></span>Adobe Illustrator</li>
+              <li><span class="skill-dot"></span>Adobe Photoshop</li>
+              <li><span class="skill-dot"></span>Miro</li>
+            </ul>
+          </div>
+
+          <div class="skill-group" style="--delay:0.3s">
+            <div class="skill-group-icon">◎</div>
+            <h3>Soft Skills</h3>
+            <ul>
+              <li><span class="skill-dot"></span>Research & Writing</li>
+              <li><span class="skill-dot"></span>Event Management</li>
+              <li><span class="skill-dot"></span>Leadership</li>
+              <li><span class="skill-dot"></span>Team Coordination</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT TAB -->
+    <section class="tab-section" id="tab-contact">
+      <div class="container">
+        <div class="section-tag">// 06 — Contact</div>
+        <h2 class="section-title">Let's <em>Connect</em></h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p class="contact-intro">Whether it's research collaboration, a cool project, or just a conversation about chip design — I'm always open.</p>
+            <div class="contact-links">
+              <a href="mailto:nasiruddin.m.himel@gmail.com" class="contact-link">
+                <span class="cl-icon">✉</span>
+                <div>
+                  <span class="cl-label">Email</span>
+                  <span class="cl-val">nasiruddin.m.himel@gmail.com</span>
+                </div>
+              </a>
+              <a href="tel:+8801856570011" class="contact-link">
+                <span class="cl-icon">✆</span>
+                <div>
+                  <span class="cl-label">Phone</span>
+                  <span class="cl-val">+880-1856570011</span>
+                </div>
+              </a>
+              <a href="https://linkedin.com/in/nasiruddin-mahmud" target="_blank" class="contact-link">
+                <span class="cl-icon">in</span>
+                <div>
+                  <span class="cl-label">LinkedIn</span>
+                  <span class="cl-val">linkedin.com/in/nasiruddin-mahmud</span>
+                </div>
+              </a>
+              <a href="https://facebook.com/nasiruddin.himel" target="_blank" class="contact-link">
+                <span class="cl-icon">f</span>
+                <div>
+                  <span class="cl-label">Facebook</span>
+                  <span class="cl-val">facebook.com/nasiruddin.himel</span>
+                </div>
+              </a>
+              <div class="contact-link no-link">
+                <span class="cl-icon">📍</span>
+                <div>
+                  <span class="cl-label">Location</span>
+                  <span class="cl-val">East Manikdi, Dhaka Cantonment, Dhaka 1206</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-wrap">
+            <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="What's on your mind?" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary full-w">Send Message ↗</button>
+              <p class="form-note" id="form-msg"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">[NMH]</span>
+      <span class="footer-copy">© 2025 Nasiruddin Mahmud Himel · nasiruddin.me</span>
+      <span class="footer-made">Designed with ◈ in Dhaka</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
