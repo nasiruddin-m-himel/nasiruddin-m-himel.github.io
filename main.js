@@ -184,6 +184,94 @@ function handleFormSubmit(e) {
   setTimeout(() => { msg.textContent = ''; }, 4000);
 }
 
+// ============ CYCLING STATS ============
+const STAT_PAGES = [
+  [
+    { num: '3+',   label: 'Publications' },
+    { num: '7+',   label: 'Projects' },
+    { num: 'IEEE', label: 'Associate Director' },
+  ],
+  [
+    { num: '96%',  label: 'GestureNet Accuracy' },
+    { num: '32nm', label: 'CNFET SRAM' },
+    { num: '4',    label: 'SRAM Topologies' },
+  ],
+  [
+    { num: 'B.Sc', label: 'EECE @ MIST' },
+    { num: '2027', label: 'Graduation Year' },
+    { num: 'Dhaka', label: 'Bangladesh' },
+  ],
+  [
+    { num: '3+',   label: 'Yrs Leadership' },
+    { num: 'LFR',  label: 'Segment Lead' },
+    { num: 'Club', label: 'Robotics Coord.' },
+  ],
+  [
+    { num: '3+',   label: 'Yrs Freelancing' },
+    { num: 'Math', label: 'Instructor' },
+    { num: 'Art',  label: 'Digital Artist' },
+  ],
+];
+
+let statPage = 0;
+
+function setStatPage(page, animate = true) {
+  statPage = (page + STAT_PAGES.length) % STAT_PAGES.length;
+  const slots = [0, 1, 2];
+
+  if (animate) {
+    slots.forEach(i => {
+      const el = document.getElementById(`stat-${i}`);
+      if (el) { el.classList.add('fade-out'); el.classList.remove('fade-in'); }
+    });
+    setTimeout(() => renderStatPage(), 350);
+  } else {
+    renderStatPage();
+  }
+
+  // Update dots
+  document.querySelectorAll('.stat-dot-ind').forEach(d => {
+    d.classList.toggle('active', +d.dataset.i === statPage);
+  });
+}
+
+function renderStatPage() {
+  const data = STAT_PAGES[statPage];
+  [0, 1, 2].forEach(i => {
+    const numEl = document.getElementById(`stat-num-${i}`);
+    const lblEl = document.getElementById(`stat-label-${i}`);
+    const slot  = document.getElementById(`stat-${i}`);
+    if (!numEl) return;
+    numEl.textContent = data[i].num;
+    lblEl.textContent = data[i].label;
+    slot.classList.remove('fade-out');
+    slot.classList.add('fade-in');
+    // Remove class after animation
+    setTimeout(() => slot.classList.remove('fade-in'), 500);
+  });
+  // Update dots
+  document.querySelectorAll('.stat-dot-ind').forEach(d => {
+    d.classList.toggle('active', +d.dataset.i === statPage);
+  });
+}
+
+// Auto-cycle every 3s
+let statTimer = setInterval(() => setStatPage(statPage + 1), 3000);
+
+// Dot click navigation
+window.addEventListener('DOMContentLoaded', () => {
+  // Init first page without animation
+  setStatPage(0, false);
+
+  document.querySelectorAll('.stat-dot-ind').forEach(d => {
+    d.addEventListener('click', () => {
+      clearInterval(statTimer);
+      setStatPage(+d.dataset.i);
+      statTimer = setInterval(() => setStatPage(statPage + 1), 3000);
+    });
+  });
+});
+
 // ============ HERO ENTRY ANIMATION ============
 window.addEventListener('DOMContentLoaded', () => {
   const heroEls = document.querySelectorAll('.hero-chip-label, .hero-name, .hero-tagline, .hero-cta, .hero-stats');

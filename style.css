@@ -252,6 +252,42 @@ textarea, input { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
+}
+.stat-slot {
+  display: flex;
+  flex-direction: column;
+  min-width: 70px;
+}
+.stat-slot.fade-out {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.stat-slot.fade-in {
+  animation: stat-pop 0.4s ease forwards;
+}
+@keyframes stat-pop {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stat-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-left: 4px;
+}
+.stat-dot-ind {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.stat-dot-ind.active {
+  background: var(--accent);
+  transform: scale(1.4);
+  box-shadow: 0 0 6px var(--accent);
 }
 .stat { display: flex; flex-direction: column; }
 .stat-num {
