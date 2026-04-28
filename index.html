@@ -5,74 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nasiruddin Mahmud | Portfolio</title>
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f4f4f9;
+            color: var(--text-main);
+            background-color: #f1f5f9;
         }
+
         header {
-            background: #2c3e50;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #fff;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
+
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            letter-spacing: -0.5px;
         }
+
         header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            color: #bdc3c7;
+            font-size: 1.25rem;
+            margin-top: 12px;
+            color: #cbd5e1;
+            font-weight: 300;
         }
+
         .container {
             max-width: 900px;
-            margin: auto;
-            padding: 2rem;
+            margin: -2rem auto 2rem;
+            padding: 0 1.5rem;
+            position: relative;
         }
+
         section {
-            background: #fff;
+            background: var(--card-bg);
             margin-bottom: 2rem;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
         }
+
+        section:hover {
+            transform: translateY(-2px);
+        }
+
         h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
+            color: #0f172a;
+            border-bottom: 3px solid var(--primary-color);
             padding-bottom: 0.5rem;
             margin-top: 0;
+            margin-bottom: 1.5rem;
+            display: inline-block;
         }
+
+        .item-card {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .item-card:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .item-card h3 {
+            margin: 0 0 5px 0;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .item-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
         .skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
             list-style: none;
             padding: 0;
         }
+
         .skills-list li {
-            background: #3498db;
-            color: #fff;
-            padding: 5px 15px;
-            border-radius: 20px;
+            background: #e0f2fe;
+            color: var(--primary-dark);
+            padding: 8px 18px;
+            border-radius: 30px;
             font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s;
         }
-        .project {
-            margin-bottom: 1.5rem;
+
+        .skills-list li:hover {
+            background: #bae6fd;
         }
-        .project h3 {
-            margin: 0 0 5px 0;
-            color: #2980b9;
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
+
+        .contact-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.2s;
+        }
+
+        .contact-links a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
-            padding: 1rem;
-            background: #2c3e50;
-            color: #fff;
-            margin-top: 2rem;
+            padding: 2rem;
+            background: #0f172a;
+            color: #94a3b8;
+            margin-top: 3rem;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -89,6 +164,65 @@
             <p>Hello! I am an EEE student with a strong passion for hardware engineering, circuit design, and autonomous systems. I enjoy bridging the gap between theoretical electronics and practical, real-world robotics.</p>
         </section>
 
+        <section id="education">
+            <h2>Education</h2>
+            <div class="item-card">
+                <h3>Military Institute of Science and Technology (MIST)</h3>
+                <div class="item-meta">Bachelor of Science - BS, Electrical and Electronics Engineering | Apr 2023 – 2027</div>
+                <p><strong>Skills:</strong> Research, MATLAB, and more.</p>
+            </div>
+            <div class="item-card">
+                <h3>Notre Dame College</h3>
+                <div class="item-meta">Higher Secondary Certificate | Jun 2020 – Dec 2022</div>
+            </div>
+            <div class="item-card">
+                <h3>Adamjee Cantonment Public School</h3>
+                <div class="item-meta">Secondary School Certificate | Jan 2011 – Feb 2020</div>
+                <p><strong>Skills:</strong> C++, Python</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="item-card">
+                <h3>Associate Director</h3>
+                <div class="item-meta">IEEE MIST Student Branch | Jul 2025 – Present</div>
+            </div>
+            <div class="item-card">
+                <h3>Team Coordinator</h3>
+                <div class="item-meta">MIST Robotics Club | Jun 2025 – Present</div>
+                <p>Responsible for overseeing event planning, inter-team collaboration, and task delegation across multiple sub-teams. My role involves coordinating complex robotics initiatives.</p>
+            </div>
+            <div class="item-card">
+                <h3>Mathematics Instructor</h3>
+                <div class="item-meta">UDVASH - উদ্ভাস (Part-time) | Oct 2023 – Jun 2024</div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Publications & Research</h2>
+            <div class="item-card">
+                <h3>Forecasting SSC Examination Performance in Bangladesh Using ARIMA: An Eleven-Year Time Series Analysis</h3>
+                <div class="item-meta">Published: March 2026</div>
+            </div>
+            <div class="item-card">
+                <h3>Analyzing Stock Price Volatility: A Statistical Study of Three Listed Companies on the Dhaka Stock Exchange</h3>
+                <div class="item-meta">Published: April 2025 | Asian Business Review</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="item-card">
+                <h3>Automated Fish Feeder</h3>
+                <p>Designed and built an automated aquarium feeding system utilizing an ESP32 microcontroller, a servo motor, and custom 3D-printed hardware components.</p>
+            </div>
+            <div class="item-card">
+                <h3>SRAM Cell Modeling</h3>
+                <p>Conducted simulations and analysis on 6T CNTFET SRAM cells, utilizing MATLAB to visualize Static Noise Margin (SNM) plots for stability testing.</p>
+            </div>
+        </section>
+
         <section id="skills">
             <h2>Technical Skills</h2>
             <ul class="skills-list">
@@ -98,26 +232,19 @@
                 <li>VLSI & SRAM Design</li>
                 <li>C/C++ & 8086 Assembly Language</li>
                 <li>Hardware Troubleshooting</li>
+                <li>Event Management & Leadership</li>
             </ul>
         </section>
 
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="project">
-                <h3>Automated Fish Feeder</h3>
-                <p>Designed and built an automated aquarium feeding system utilizing an ESP32 microcontroller, a servo motor, and custom 3D-printed hardware components.</p>
-            </div>
-            <div class="project">
-                <h3>SRAM Cell Modeling</h3>
-                <p>Conducted simulations and analysis on 6T CNTFET SRAM cells, utilizing MATLAB to visualize Static Noise Margin (SNM) plots for stability testing.</p>
-            </div>
-        </section>
-
         <section id="contact">
-            <h2>Contact</h2>
+            <h2>Contact & Connect</h2>
             <p>Feel free to reach out to discuss hardware projects, robotics, or engineering opportunities.</p>
-            <p><strong>Email:</strong> your.student.email@mist.ac.bd</p>
-            <p><strong>Website:</strong> nasiruddin.me</p>
+            <div class="contact-links">
+                <a href="mailto:Nasiruddin.m.himel@gmail.com">📧 Nasiruddin.m.himel@gmail.com</a>
+                <a href="https://www.linkedin.com/in/nasiruddin-mahmud/" target="_blank">💼 linkedin.com/in/nasiruddin-mahmud</a>
+                <a href="https://www.facebook.com/nasiruddin.himel/" target="_blank">🌐 facebook.com/nasiruddin.himel</a>
+                <a href="https://nasiruddin.me" target="_blank">💻 nasiruddin.me</a>
+            </div>
         </section>
     </div>
 
